@@ -1,14 +1,19 @@
-import Header, { Welcome } from "./components/Header";
-import { UserCard } from "./components/Usercard";
-import {Counter, RoleToggle, UserCard1}from "./components/UseState";
-import { UsersList } from "./components/UseEffect";
+import { Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Users from "./pages/Users";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div>
-      <p>Welcome to frontend</p>
-      <UsersList/>
-    </div>
+    <>
+      <Navbar />      
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/users" element={<Users />} />
+      </Routes>
+    </>
   );
 }
 
