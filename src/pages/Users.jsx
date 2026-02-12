@@ -34,10 +34,10 @@ function Users() {
   if (error) return <p>{error}</p>;
 
   return (
-    <div>
+    <div className="container">
       <h2>Users</h2>
 
-      <ul>
+      <ul className="user-list">
         {users.map(user => (
           <li key={user._id}>
             {user.name} - {user.role}

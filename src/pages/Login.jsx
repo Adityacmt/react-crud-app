@@ -37,8 +37,10 @@ function Login() {
   };
 
   return (
+    <div className="container">
+    <h2>Login</h2>
     <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
+      
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
@@ -58,6 +60,7 @@ function Login() {
 
       <button type="submit">Login</button>
     </form>
+    </div>
   );
 }
 
