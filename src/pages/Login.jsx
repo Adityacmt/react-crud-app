@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { setToken } from "../utils/auth";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -27,7 +28,7 @@ function Login() {
       }
 
       // ✅ Save JWT
-      localStorage.setItem("token", data.token);
+      setToken(data.token);
 
       // ✅ Redirect
       navigate("/dashboard");

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { getToken } from "../utils/auth";
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -7,7 +8,7 @@ function Users() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const token = localStorage.getItem("token");
+        const token = getToken();
 
         const res = await fetch("http://localhost:5000/api/users", {
           headers: {
